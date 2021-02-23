@@ -1,6 +1,6 @@
 namespace App.ViewModels
 {
-    public struct ApiViewModel
+    public struct ArticleViewModel
     {
         
     }
