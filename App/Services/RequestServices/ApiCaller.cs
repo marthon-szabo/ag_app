@@ -1,4 +1,6 @@
+using System;
 using System.Net.Http;
+using System.Threading.Tasks;
 using App.ViewModels;
 
 namespace App.Services.RequestServices
@@ -13,9 +15,16 @@ namespace App.Services.RequestServices
 
         private static HttpClient Client;
 
-        public ArticleViewModel CallAPI(string querystring)
+        public async Task<ApiResponseViewModel> CallAPI(string querystring)
         {
-            throw new System.NotImplementedException();
+            HttpResponseMessage response = await Client.GetAsync(querystring);
+
+            if (response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadAsAsync<ApiResponseViewModel>();
+            }
+
+            throw new ArgumentException("Invalid querystring!");
         }
 
         private void CheckClient()

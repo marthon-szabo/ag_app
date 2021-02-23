@@ -7,7 +7,7 @@ namespace App.Services.Factories
 {
     public class ArticleViewModelFactory : IArticleViewModelFactory
     {
-        public IEnumerable<ArticleViewModel> Create(string[] results)
+        public IEnumerable<ArticleViewModel> Create(ApiResponseViewModel results)
         {
             throw new System.NotImplementedException();
         }

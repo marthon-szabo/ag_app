@@ -1,9 +1,10 @@
+using System.Threading.Tasks;
 using App.ViewModels;
 
 namespace App.Services.RequestServices
 {
     public interface IApiCaller
     {
-        ArticleViewModel CallAPI(string querystring);
+        Task<ApiResponseViewModel> CallAPI(string querystring);
     }
 }
