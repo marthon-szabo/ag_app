@@ -6,7 +6,10 @@ namespace App.Services.RequestServices
     public class ApiCaller : IApiCaller
     {
 
-        
+        public ApiCaller()
+        {
+            CheckClient();
+        }
 
         private static HttpClient Client;
 
