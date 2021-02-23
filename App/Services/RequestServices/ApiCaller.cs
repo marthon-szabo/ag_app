@@ -6,6 +6,8 @@ namespace App.Services.RequestServices
     public class ApiCaller : IApiCaller
     {
 
+        
+
         private static HttpClient Client;
 
         public ArticleViewModel CallAPI(string querystring)
@@ -13,7 +15,7 @@ namespace App.Services.RequestServices
             throw new System.NotImplementedException();
         }
 
-        private void CreateClient()
+        private void CheckClient()
         {
             if (Client == null)
             {
