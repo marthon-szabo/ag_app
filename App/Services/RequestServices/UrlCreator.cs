@@ -8,7 +8,7 @@ namespace App.Services.RequestServices
 
         public string CreateURL(string parameters)
         {
-            return $"{BaseURL}{parameters}&api-key={ApiKey}";
+            return $"{BaseURL}{parameters}&show-blocks=all&api-key={ApiKey}";
         }
     }
 }
