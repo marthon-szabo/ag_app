@@ -2,6 +2,6 @@ namespace App.Services.RequestServices
 {
     public interface IUrlCreator
     {
-        void CreateURL(string parameters);
+        string CreateURL(string parameters);
     }
 }
