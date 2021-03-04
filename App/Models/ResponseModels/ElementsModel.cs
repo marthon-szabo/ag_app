@@ -1,8 +1,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
-using App.Models.ResponseModels;
 
-namespace App.Models
+namespace App.Models.ResponseModels
 {
     public struct ElementsModel
     {
