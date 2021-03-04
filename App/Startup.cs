@@ -2,6 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using App.Services.ApiRequest;
+using App.Services.Factories;
+using App.Services.Factories.Interfaces;
+using App.Services.ResponseProcessor;
+using App.Services.ResponseProcessor.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,6 +29,11 @@ namespace App
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddMvc();
+            services.AddScoped<IUrlCreator, UrlCreator>();
+            services.AddScoped<IApiRequestService, ApiRequestService>();
+            services.AddScoped<IResponseProcessorService, ResponseProcessorService>();
+            services.AddScoped<IArticleVMFactory, ArticleVMFactory>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
