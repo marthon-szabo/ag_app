@@ -1,8 +1,4 @@
-using System.Diagnostics;
 using System.Linq;
-using System.Collections.Generic;
-using System.Net.Http;
-using App.Models;
 using App.Services.ApiRequest;
 using NUnit.Framework;
 using System.Threading.Tasks;

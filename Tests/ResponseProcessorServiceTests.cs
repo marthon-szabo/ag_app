@@ -5,7 +5,6 @@ using App.Services.ApiRequest;
 using App.Services.Factories;
 using App.Services.ResponseProcessor;
 using NUnit.Framework;
-using App.Services.Factories;
 using App.Services.Factories.Interfaces;
 using App.Services.ResponseProcessor.Interfaces;
 
