@@ -35,17 +35,6 @@ namespace App.Controllers
             return View(mAVM);
         }
 
-        public string Test()
-        {
-            var models = _reqService.Call().Result;
-            return models.ToArray()[0].Type;
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
