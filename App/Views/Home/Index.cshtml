@@ -1,8 +1,20 @@
-﻿@{
+﻿@model App.Models.ViewModels.MultipleArticleVM
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@{
+    foreach(var articleVM in Model.Articles)
+    {
+        <div class="card" style="width: 18rem;">
+            @articleVM.MainBlock.LeadImage
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    }
+}
+
