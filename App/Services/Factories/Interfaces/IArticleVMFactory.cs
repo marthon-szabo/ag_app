@@ -5,6 +5,6 @@ namespace App.Services.Factories.Interfaces
 {
     public interface IArticleVMFactory
     {
-        ArticleVM Create(BlocksModel blockModels);
+        ArticleVM Create(BlocksModel blockModels, string webTitle, string publishedDate, string lastModified);
     }
 }

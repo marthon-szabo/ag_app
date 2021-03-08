@@ -23,7 +23,8 @@ namespace App.Services.ResponseProcessor
             
             foreach (ResultsModel resultModel in resultsModels)
             {
-                ArticleVM actualArticleVM = _ArticleVMFactory.Create(resultModel.Blocks);
+                ArticleVM actualArticleVM = _ArticleVMFactory.Create(resultModel.Blocks, resultModel.WebTitle, 
+                resultModel.PublishedDate, resultModel.LastModifiedDate);
 
                 articleVMs.Add(actualArticleVM);
             }

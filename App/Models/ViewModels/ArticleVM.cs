@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using App.Models.ResponseModels;
 
@@ -11,5 +12,7 @@ namespace App.Models.ViewModels
         public BodyModel BodyModel { get; set; }
         public string WebTitle { get; set; }
         public string LeadImage { get; set; }
+        public DateTime PublishedDate { get; set; }
+        public DateTime LastModified { get; set; }
     }
 }

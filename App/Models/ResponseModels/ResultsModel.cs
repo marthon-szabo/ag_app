@@ -9,5 +9,8 @@ namespace App.Models
 
         [DisplayName("blocks")]
         public BlocksModel Blocks { get; set; }
+        public string PublishedDate { get; set; }
+        public string LastModifiedDate { get; set; }
+        public string WebTitle { get; set; }
     }
 }
