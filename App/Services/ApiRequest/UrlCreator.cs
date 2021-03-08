@@ -1,8 +1,20 @@
+using Microsoft.Extensions.Configuration;
+
 namespace App.Services.ApiRequest
 {
     public class UrlCreator : IUrlCreator
     {
-        private const string _ApiKey = "7a75b617-4388-40dc-80f3-b15f4e0e42f6"; 
+        private readonly IConfiguration _Config;
+        private readonly string _ApiKey;
+
+        public UrlCreator(IConfiguration config)
+        {
+            _Config = config;
+            _ApiKey = _Config["UrlCreator:ApiKey"];
+        }
+
+        
+
         public string GetBaseUri()
         {
             return $"https://content.guardianapis.com/search?show-blocks=all&api-key={_ApiKey}";
