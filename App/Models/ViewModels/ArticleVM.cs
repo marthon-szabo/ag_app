@@ -9,5 +9,7 @@ namespace App.Models.ViewModels
         public BlocksModel BlockModel { get; set; }
         public MainBlockModel MainBlock { get; set; }
         public BodyModel BodyModel { get; set; }
+        public string WebTitle { get; set; }
+        public string LeadImage { get; set; }
     }
 }
