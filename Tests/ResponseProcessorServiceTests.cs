@@ -7,6 +7,8 @@ using App.Services.ResponseProcessor;
 using NUnit.Framework;
 using App.Services.Factories.Interfaces;
 using App.Services.ResponseProcessor.Interfaces;
+using NSubstitute;
+using Microsoft.Extensions.Configuration;
 
 namespace Tests
 {
@@ -31,7 +33,10 @@ namespace Tests
 
         private IEnumerable<ResultsModel> GetResultsModels()
         {
-            IUrlCreator urlCreator = new UrlCreator(); 
+            IConfiguration configurationStub = Substitute.For<IConfiguration>();
+            configurationStub["UrlCreator:ApiKey"] = "test";
+
+            IUrlCreator urlCreator = new UrlCreator(configurationStub);
             IApiRequestService requestService = new ApiRequestService(urlCreator);
 
             return requestService.Call().Result;
