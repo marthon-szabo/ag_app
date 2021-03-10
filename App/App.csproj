@@ -2,11 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>0bda5d18-266e-4711-bf67-a609a671dc9c</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="bootstrap" Version="4.6.0" />
     <PackageReference Include="Bootstrap.Less" Version="3.4.1" />
+    <PackageReference Include="bootstrap.sass" Version="4.6.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="System.Net.Http.Formatting.Extension" Version="5.2.3" />
   </ItemGroup>
