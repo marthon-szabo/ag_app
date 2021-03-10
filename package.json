@@ -16,7 +16,11 @@
     "url": "https://github.com/marthon-szabo/ag_app/issues"
   },
   "homepage": "https://github.com/marthon-szabo/ag_app#readme",
+  "devDependencies": {
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^4.14.1"
+  },
   "dependencies": {
-    "gulp-sass": "^4.1.0"
+    "gulp": "^4.0.2"
   }
 }
