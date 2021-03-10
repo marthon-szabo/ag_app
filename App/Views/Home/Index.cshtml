@@ -4,17 +4,23 @@
     ViewData["Title"] = "Home Page";
 }
 
-@{
-    foreach(var articleVM in Model.Articles)
-    {
-        <div class="card" style="width: 18rem;">
-            @articleVM.MainBlock.LeadImage
-            <div class="card-body">
-                <h5 class="card-title"></h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="d-flex flex-row flex-wrap">
+    @{
+        foreach(var articleVM in Model.Articles)
+        {
+            <div class="card position-relative mx-3 my-3" style="width: 18rem; height: 35rem;">
+                <img src="@articleVM.Thumbnail" class="card-img-top"/>
+                <div class="card-overlay">
+                    <div class="card-overlay__link"><a>Read me!</a></div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@articleVM.WebTitle</h5>
+                    <p class="card-text">@articleVM.TrailText</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+                <a href="#" class="btn btn__index-page position-absolute btn-primary">Go somewhere</a>
             </div>
-        </div>
+        }
     }
-}
+</div>
 
