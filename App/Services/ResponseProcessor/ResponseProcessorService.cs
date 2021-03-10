@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections.Generic;
 using App.Models;
 using App.Models.ViewModels;
@@ -23,10 +24,14 @@ namespace App.Services.ResponseProcessor
             
             foreach (ResultsModel resultModel in resultsModels)
             {
-                ArticleVM actualArticleVM = _ArticleVMFactory.Create(resultModel.Blocks, resultModel.WebTitle, 
-                resultModel.PublishedDate, resultModel.LastModifiedDate);
+                if (resultModel.Blocks.Main.Id != null)
+                {
+                    ArticleVM actualArticleVM = _ArticleVMFactory.Create(resultModel.Blocks, resultModel.WebTitle, 
+                    resultModel.Fields.Thumbnail, resultModel.Fields.TrailText);
 
-                articleVMs.Add(actualArticleVM);
+                    articleVMs.Add(actualArticleVM);
+                }
+
             }
 
             MultipleArticleVM mAVM = new MultipleArticleVM

@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using System;
 using System.Linq;
 using App.Models;
@@ -9,8 +10,12 @@ namespace App.Services.Factories
     public class ArticleVMFactory : IArticleVMFactory
     {
 
-        public ArticleVM Create(BlocksModel blockModels, string webTitle, string publishedDate, string lastModified)
+        public ArticleVM Create(BlocksModel blockModels, string webTitle, string thumbnailUrl, string trailText)
         {
+            trailText ??= "No description available";
+
+            string picture = Regex.Replace(blockModels.Main.BodyHtml, @"\\", "");
+
             return new ArticleVM
             {
                 BlockModel = blockModels,
@@ -18,8 +23,11 @@ namespace App.Services.Factories
                 BodyModel = blockModels.Body.ToArray()[0],
                 MainBlock = blockModels.Main,
                 WebTitle = webTitle,
-                PublishedDate = DateTime.Parse(publishedDate),
-                LastModified = DateTime.Parse(publishedDate)
+                PublishedDate = (blockModels.Main.PublishedDate != null) ? DateTime.Parse(blockModels.Main.PublishedDate) : null,
+                LeadImage = picture,
+                LastModified = (blockModels.Main.LastModifiedDate != null) ? DateTime.Parse(blockModels.Main.LastModifiedDate) : null,
+                Thumbnail = thumbnailUrl,
+                TrailText = trailText
             };
         }
 
