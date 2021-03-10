@@ -15,7 +15,7 @@ namespace Tests
             configurationStub["UrlCreator:ApiKey"] = "test";
 
             IUrlCreator urlCreator = new UrlCreator(configurationStub);
-            string expected = "https://content.guardianapis.com/search?show-blocks=all&api-key=test";
+            string expected = "https://content.guardianapis.com/search?show-blocks=all&api-key=test&show-fields=all&page-size=12";
 
             // Act
             string result = urlCreator.GetBaseUri();
