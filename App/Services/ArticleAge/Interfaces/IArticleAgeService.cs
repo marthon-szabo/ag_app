@@ -1,8 +1,9 @@
-using System;
+using App.Models.ViewModels;
+
 namespace App.Services.ArticleAge.Interfaces
 {
     public interface IArticleAgeService
     {
-        string CountMyAge(DateTime lastModified);
+        string CountMyAge(ArticleVM articleVM);
     }
 }
