@@ -1,15 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using App.Services.ApiRequest;
+using App.Services.ArticleAge;
+using App.Services.ArticleAge.Interfaces;
 using App.Services.Factories;
 using App.Services.Factories.Interfaces;
 using App.Services.ResponseProcessor;
 using App.Services.ResponseProcessor.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -34,6 +31,7 @@ namespace App
             services.AddScoped<IApiRequestService, ApiRequestService>();
             services.AddScoped<IResponseProcessorService, ResponseProcessorService>();
             services.AddScoped<IArticleVMFactory, ArticleVMFactory>();
+            services.AddScoped<IArticleAgeService, ArticleAgeService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
